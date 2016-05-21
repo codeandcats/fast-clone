@@ -1,0 +1,30 @@
+{
+  "name": "fast-clone",
+  "version": "1.0.0",
+  "description": "Extremely fast javascript deep cloning function",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "clone",
+    "copy",
+    "deep",
+    "object",
+    "date",
+    "fast",
+    "fastest",
+    "quick",
+    "speed"
+  ],
+  "author": "Ben <codeandcats@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeandcats/fast-clone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codeandcats/fast-clone/issues"
+  },
+  "homepage": "https://github.com/codeandcats/fast-clone#readme"
+}
