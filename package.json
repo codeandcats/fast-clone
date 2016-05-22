@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Extremely fast deep cloning function",
   "main": "./index.js",
-  "typings": "./index.d.ts",
   "scripts": {
     "test": "mocha",
     "benchmark": "node benchmark"
