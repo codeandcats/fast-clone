@@ -2,13 +2,24 @@
 	<img src="https://raw.githubusercontent.com/codeandcats/fast-clone/master/logo.png" />
 </center>
 
-The *fastest deep cloning* function on NPM that supports all the following types:
+The *fastest deep cloning* function on NPM that supports the following types:
 - Objects
 - Arrays
 - Dates
 - Strings
 - Numbers
 - Booleans
+
+## Speed Comparison
+Average runtime of various NPM clone libraries on a complex object loaded from a **1.64 MB** json file.
+
+NPM Library      | Time
+-----------------|----------
+clone            |  716 ms
+deepcopy         |  193 ms
+snapshot         |  184 ms
+lodash.cloneDeep |  120 ms
+**fast-clone**   | **60 ms**
 
 ## Installation
 ```
