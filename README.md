@@ -58,4 +58,4 @@ Output will be:
 ## Got an Issue or Feature Suggestion?
 Then [create an issue on GitHub](https://github.com/codeandcats/fast-clone/issues) and I'll fix/add it asap. :)
 
- 
+Or fork the repo and shoot me a pull request
