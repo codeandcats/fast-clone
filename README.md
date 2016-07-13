@@ -3,11 +3,11 @@
 </center>
 
 The *fastest deep cloning* function on NPM that supports the following types:
-- Objects
+- Objects (POJOs, null, undefined)
 - Arrays
 - Dates
 - Strings
-- Numbers
+- Numbers (NaN, Positive Intinity, Negative Intinity)
 - Booleans
 
 ## Speed Comparison

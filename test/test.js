@@ -31,10 +31,16 @@ describe('When cloning', function() {
 	
 	describe('Infinity', function() {
 		it('should return Infinity', function() {
-			expect(clone(Infinity)).to.equal(Infinity);
+			expect(clone(Number.POSITIVE_INFINITY)).to.equal(Number.POSITIVE_INFINITY);
 		});
 	});
 	
+	describe('Negative Infinity', function() {
+		it('should return Negative Infinity', function() {
+			expect(clone(Number.NEGATIVE_INFINITY)).to.equal(Number.NEGATIVE_INFINITY);
+		});
+	});
+
 	describe('null', function() {
 		it('should return null', function() {
 			expect(clone(null)).to.equal(null);
