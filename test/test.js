@@ -46,6 +46,30 @@ describe('When cloning', function() {
 			expect(clone(undefined)).to.equal(undefined);
 		});
 	});
+
+	describe('a date', function() {
+		var expected;
+		var actual;
+		
+		beforeEach(function() {
+			expected = new Date('1997-08-29T00:00:00.000+1000');
+			actual = clone(expected);
+		});
+
+		it('should return the same date', function() {
+			expect(actual.getFullYear()).to.equal(expected.getFullYear());
+			expect(actual.getMonth()).to.equal(expected.getMonth());
+			expect(actual.getDate()).to.equal(expected.getDate());
+		});
+
+		it('should return the same time', function() {
+			expect(actual.getTime()).to.equal(expected.getTime());
+		});
+
+		it('should return the same timezone', function() {
+			expect(actual.getTimezoneOffset()).to.equal(expected.getTimezoneOffset());
+		});
+	});
 	
 	describe('an array', function() {
 		it('should return a new array', function() {
