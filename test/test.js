@@ -53,6 +53,33 @@ describe('When cloning', function() {
 		});
 	});
 
+	describe('a RegExp', function() {
+		var expected;
+		var actual;
+		var hisName = 'Mr Plow, thats his name, that name again is Mr Plow'
+
+		beforeEach(function() {
+			expected = new RegExp("plow", "gi");
+			actual = clone(expected);
+		});
+
+		it('should return a different RexExp Object', function() {
+			expect(actual).to.not.equal(expected);
+		});
+
+		it('should match the same string', function() {
+			expect(hisName.search(actual)).to.equal(hisName.search(expected));
+
+			expectedMatch = hisName.match(expected);
+			actualMatch = hisName.match(actual);
+			
+			expectedMatch.forEach(function(match, key) {
+				expect(actualMatch[key]).to.equal(match);
+			});
+			
+		});
+	});
+
 	describe('a date', function() {
 		var expected;
 		var actual;
@@ -143,6 +170,36 @@ describe('When cloning', function() {
 				expect(b).to.eql(a);
 			});
 		});
+
+		describe('of Regex', function() {
+			var expected;
+			var actual;
+			var hisName = 'Mr Plow, thats his name, that name again is Mr Plow'
+
+			beforeEach(function() {
+				expected = [new RegExp("plow", "gi"), /mr/gi];
+				actual = clone(expected);
+			});
+
+			it('should return array containing new RexExp instances', function() {
+				for (var i=0; i<expected.length; i++) {
+					expect(actual[i]).to.not.equal(expected[i]);
+				}				
+			});
+
+			it('should return array of matching RegExp', function() {
+				for (var i=0; i<expected.length; i++) {
+					expect(hisName.search(actual[i])).to.equal(hisName.search(expected[i]));
+
+					expectedMatch = hisName.match(expected[i]);					
+					actualMatch = hisName.match(actual[i]);
+					
+					expectedMatch.forEach(function(match, key) {
+						expect(actualMatch[key]).to.equal(match);
+					});					
+				}
+			});
+		})
 	});
 	
 	describe('an object', function() {
