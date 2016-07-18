@@ -6,6 +6,7 @@ The *fastest deep cloning* function on NPM that supports the following types:
 - Objects (POJOs, null, undefined)
 - Arrays
 - Dates
+- Regular Expressions
 - Strings
 - Numbers (NaN, Positive Intinity, Negative Intinity)
 - Booleans
