@@ -27,7 +27,8 @@
 					result = new Date();
 					result.setTime(value.getTime());
 					return result;
-				} else if (value instanceof RegExp) {					
+				} 
+				else if (value instanceof RegExp) {					
 					result = newRegExp(value);
    					return result;
 				}
