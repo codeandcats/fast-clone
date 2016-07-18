@@ -27,6 +27,10 @@
 					result = new Date();
 					result.setTime(value.getTime());
 					return result;
+				} 
+				else if (value instanceof RegExp) {					
+					result = newRegExp(value);
+   					return result;
 				}
 				
 				result = JSON.parse(JSON.stringify(value));
@@ -48,7 +52,10 @@
 					var newValue = new Date();
 					newValue.setTime(originalValue.getTime());
 					copy[key] = newValue;
-				}
+				}						
+				else if (originalValue instanceof RegExp) {
+					copy[key] = newRegExp(originalValue);
+				}		
 				else if (originalValue == null) {
 					copy[key] = originalValue;
 				}
@@ -85,5 +92,11 @@
 		}
 	}
 		
+	function newRegExp(value) {
+		var regexpText = String(value);
+		var slashIndex = regexpText.lastIndexOf('/');
+		return new RegExp(regexpText.slice(1, slashIndex), regexpText.slice(slashIndex+1));
+	}
+
 })(this);
 
