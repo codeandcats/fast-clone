@@ -25,7 +25,7 @@ function randomPerson(options) {
 		employment: {
 			companyName: faker.company.companyName()  
 		},
-		
+		regex: /a/g,
 		age: faker.random.number(),
 		dateOfBirth: faker.date.past(),
 		enroledToVote: faker.random.boolean(),
