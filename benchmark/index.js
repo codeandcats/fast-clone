@@ -8,7 +8,6 @@ var benv = require('benv');
 benv.setup(function() {
 
 	benv.expose({
-		//$: benv.require('./node_modules/zepto/zepto.js', 'Zepto'),
 		angular: benv.require('../node_modules/angular/angular.js', 'angular')
 	});
 
