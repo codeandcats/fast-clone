@@ -15,12 +15,11 @@ function randomPerson(options) {
 	opts.maxDateOfBirth = opts.maxDateOfBirth || new Date(Date.now() - MS_IN_YEAR);
 	opts.minAge = opts.minAge || 18;
 	opts.maxAge = opts.maxAge || 105;
-	opts.depth = opts.depth || 0; 
+	opts.depth = opts.depth || 0;
 	
 	// Generates a family tree
 	var result = {
-		firstName: faker.name.lastName(),
-		lastName: faker.name.firstName(),
+		name: faker.name.lastName() + faker.name.firstName(),
 		
 		employment: {
 			companyName: faker.company.companyName()  

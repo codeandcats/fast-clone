@@ -12,15 +12,16 @@ The *fastest deep cloning* function on NPM that supports the following types:
 - Booleans
 
 ## Speed Comparison
-Average runtime of various NPM clone libraries on a complex object loaded from a **1.64 MB** json file.
+Average runtime of various NPM clone libraries on a **large** complex object loaded from a **1.61 MB** json file.
 
-NPM Library      | Time
------------------|----------
-clone            |  716 ms
-deepcopy         |  193 ms
-snapshot         |  184 ms
-lodash.cloneDeep |  120 ms
-**fast-clone**   | **60 ms**
+Library          | Time
+-----------------|-----------
+clone            | 1,229 ms
+snapshot         |   213 ms
+deepClone        |   208 ms
+angular.copy     |   195 ms
+lodash.cloneDeep |   187 ms
+**fast-clone**   |  **72 ms**
 
 ## Installation
 ```
