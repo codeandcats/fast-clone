@@ -4,8 +4,11 @@
   "description": "Extremely fast deep cloning function",
   "main": "./index.js",
   "scripts": {
+    "build": "tsc -p ./",
+    "clean": "rimraf index.js index.d.ts",
     "test": "./node_modules/.bin/mocha",
-    "benchmark": "node benchmark"
+    "benchmark": "node benchmark",
+    "prepublish": "npm run clean && npm run build"
   },
   "keywords": [
     "clone",
@@ -42,6 +45,7 @@
     "mocha": "5.0.4",
     "numeral": "1.5.6",
     "pad": "1.0.3",
+    "rimraf": "2.6.2",
     "snapshot": "0.0.0",
     "typescript": "2.7.2"
   }
