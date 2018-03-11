@@ -1,5 +1,8 @@
 'use strict';
 
+declare let exports: any;
+declare let module: any;
+
 (function(root) {
 	
 	if (typeof exports !== 'undefined') {
