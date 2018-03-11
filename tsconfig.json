@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "declaration": true
+    "strict": true,
+    "target": "es3"
   },
   "files": [
     "index.ts"

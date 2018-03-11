@@ -6,7 +6,7 @@
   "scripts": {
     "benchmark": "ts-node benchmark",
     "build": "tsc -p ./",
-    "clean": "rimraf index.js index.d.ts",
+    "clean": "rimraf index.js",
     "prepublish": "npm run clean && npm run build",
     "test": "mocha -r ts-node/register tests/**/*.test.ts"
   },
@@ -34,6 +34,7 @@
   "devDependencies": {
     "@types/chai": "4.1.2",
     "@types/mocha": "2.2.48",
+    "@types/node": "9.4.7",
     "angular": "1.5.11",
     "benv": "3.3.0",
     "chai": "3.5.0",

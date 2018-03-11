@@ -1,7 +1,4 @@
-'use strict';
-
-declare let exports: any;
-declare let module: any;
+const windowOrGlobal = Function('return this')();
 
 (function (root) {
 
@@ -15,8 +12,8 @@ declare let module: any;
     root.clone = clone;
   }
 
-  function clone(value) {
-    var type = typeof value;
+  function clone(value: any) {
+    const type = typeof value;
     switch (type) {
       case 'object':
         // null and undefined
@@ -24,7 +21,7 @@ declare let module: any;
           return value;
         }
 
-        var result;
+        let result;
 
         if (value instanceof Date) {
           result = new Date();
@@ -45,9 +42,9 @@ declare let module: any;
     }
   }
 
-  function fixPropertyValue(original, copy, key) {
-    var originalValue = original[key];
-    var originalType = typeof originalValue;
+  function fixPropertyValue(original: any, copy: any, key: number | string) {
+    const originalValue = original[key];
+    const originalType = typeof originalValue;
 
     switch (originalType) {
       case 'object':
@@ -81,24 +78,24 @@ declare let module: any;
     }
   }
 
-  function fixTypes(original, copy) {
+  function fixTypes(original: any, copy: any) {
     if (original instanceof Array) {
-      for (var index = 0; index < original.length; index++) {
+      for (let index = 0; index < original.length; index++) {
         fixPropertyValue(original, copy, index);
       }
     }
     else {
-      var keys = Object.getOwnPropertyNames(original);
+      let keys = Object.getOwnPropertyNames(original);
       keys.forEach(function (key) {
         fixPropertyValue(original, copy, key);
       });
     }
   }
 
-  function newRegExp(value) {
-    var regexpText = String(value);
-    var slashIndex = regexpText.lastIndexOf('/');
+  function newRegExp(value: RegExp) {
+    const regexpText = String(value);
+    const slashIndex = regexpText.lastIndexOf('/');
     return new RegExp(regexpText.slice(1, slashIndex), regexpText.slice(slashIndex + 1));
   }
 
-})(this);
+})(windowOrGlobal);

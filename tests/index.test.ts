@@ -1,5 +1,5 @@
-var expect = require('chai').expect;
-var clone = require('../');
+import { expect } from 'chai';
+const clone = require('../');
 
 describe('When cloning', function () {
 
@@ -54,9 +54,9 @@ describe('When cloning', function () {
   });
 
   describe('a RegExp', function () {
-    var expected;
-    var actual;
-    var hisName = 'Mr Plow, thats his name, that name again is Mr Plow'
+    let expected;
+    let actual;
+    let hisName = 'Mr Plow, thats his name, that name again is Mr Plow'
 
     beforeEach(function () {
       expected = new RegExp("plow", "gi");
@@ -91,8 +91,8 @@ describe('When cloning', function () {
   });
 
   describe('a date', function () {
-    var expected;
-    var actual;
+    let expected;
+    let actual;
 
     beforeEach(function () {
       expected = new Date('1997-08-29T00:00:00.000+1000');
@@ -116,15 +116,15 @@ describe('When cloning', function () {
 
   describe('an array', function () {
     it('should return a new array', function () {
-      var a = [1, 2, 3];
-      var b = clone(a);
+      const a = [1, 2, 3];
+      const b = clone(a);
       expect(b).to.not.equal(a);
     });
 
     function elementsShouldMatch(a, b) {
-      for (var index = 0; index < a.length; index++) {
-        var originalType = typeof a[index];
-        var newType = typeof b[index];
+      for (let index = 0; index < a.length; index++) {
+        const originalType = typeof a[index];
+        const newType = typeof b[index];
 
         expect(newType).to.equal(originalType);
         expect(b[index]).to.equal(a[index]);
@@ -133,15 +133,15 @@ describe('When cloning', function () {
 
     describe('of numbers', function () {
       it('should return array of matching numbers', function () {
-        var a = [1, 2, 3];
-        var b = clone(a);
+        const a = [1, 2, 3];
+        const b = clone(a);
         expect(b).to.eql(a);
       });
 
       describe('containing NaN and Infinity', function () {
         it('should return array of NaN and Infinity', function () {
-          var a = [NaN, Infinity];
-          var b = clone(a);
+          const a = [NaN, Infinity];
+          const b = clone(a);
           expect(b[0]).to.be.NaN;
           expect(b[1]).to.equal(Infinity);
         });
@@ -150,22 +150,22 @@ describe('When cloning', function () {
 
     describe('of strings', function () {
       it('should return array of matching strings', function () {
-        var a = ['a', 'b', 'c'];
-        var b = clone(a);
+        const a = ['a', 'b', 'c'];
+        const b = clone(a);
         expect(b).to.eql(a);
       });
     });
 
     describe('of booleans', function () {
       it('should return array of matching booleans', function () {
-        var a = [true, false];
-        var b = clone(a);
+        const a = [true, false];
+        const b = clone(a);
         expect(b).to.eql(a);
       });
     });
 
     describe('of Dates', function () {
-      var a, b;
+      let a, b;
 
       beforeEach(function () {
         a = [new Date()];
@@ -182,9 +182,9 @@ describe('When cloning', function () {
     });
 
     describe('of Regex', function () {
-      var expected;
-      var actual;
-      var hisName = 'Mr Plow, thats his name, that name again is Mr Plow'
+      let expected;
+      let actual;
+      const hisName = 'Mr Plow, thats his name, that name again is Mr Plow'
 
       beforeEach(function () {
         expected = [new RegExp("plow", "gi"), /mr/gi, /name/];
@@ -192,13 +192,13 @@ describe('When cloning', function () {
       });
 
       it('should return array containing new RexExp instances', function () {
-        for (var i = 0; i < expected.length; i++) {
+        for (let i = 0; i < expected.length; i++) {
           expect(actual[i]).to.not.equal(expected[i]);
         }
       });
 
       it('should return array of matching RegExp', function () {
-        for (var i = 0; i < expected.length; i++) {
+        for (let i = 0; i < expected.length; i++) {
 
           expect(actual[i].source).to.equal(expected[i].source);
 
@@ -222,7 +222,7 @@ describe('When cloning', function () {
   });
 
   describe('an object', function () {
-    var a, b;
+    let a, b;
 
     beforeEach(function () {
       a = {
@@ -288,4 +288,3 @@ describe('When cloning', function () {
     });
   });
 });
-

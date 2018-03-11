@@ -1,9 +1,12 @@
-var dataHelper = require('./dataHelper');
-var filesize = require('filesize');
-var chalk = require('chalk');
-var pad = require('pad');
-var numeral = require('numeral');
-var benv = require('benv');
+import * as filesize from 'filesize';
+import * as chalk from 'chalk';
+import * as pad from 'pad';
+import * as numeral from 'numeral';
+import * as benv from 'benv';
+
+import { getJsonSize, getRandomPerson } from './dataHelper';
+
+declare const angular: { copy: <T>(value: T) => T };
 
 benv.setup(function () {
   benv.expose({
@@ -11,13 +14,13 @@ benv.setup(function () {
   });
 
   // Various cloning libraries
-  var libs = {
+  const libs = {
     clone: require('clone'),
     deepClone: require('deepclone'),
     'lodash.cloneDeep': require('lodash').cloneDeep,
     snapshot: (function (snapshot) {
       return function (data) {
-        var expr = snapshot(data);
+        const expr = snapshot(data);
         return eval(expr);
       };
     })(require('snapshot')),
@@ -27,12 +30,12 @@ benv.setup(function () {
 
   console.log('Generating random json data...');
 
-  var data = dataHelper.randomPerson({ depth: 11 });
+  const data = getRandomPerson({ depth: 11 });
 
   console.log('Done.');
   console.log('');
 
-  dataHelper.jsonSize(data, function (size) {
+  getJsonSize(data, function (size) {
     console.log('Test data size is: ', filesize(size));
     console.log('');
 
@@ -40,30 +43,30 @@ benv.setup(function () {
   });
 
   function runBenchmarks(libs) {
-    var names = Object.getOwnPropertyNames(libs);
+    const names = Object.getOwnPropertyNames(libs);
 
-    var results = [];
+    let results = [];
 
     names.forEach(function (name, index) {
-      var text = 'Running benchmark ' + (index + 1) + ' of ' + names.length + '...';
+      const text = 'Running benchmark ' + (index + 1) + ' of ' + names.length + '...';
 
       process.stdout.write(text + '\r');
 
-      var clone = libs[name];
+      const clone = libs[name];
 
-      var startTime = Date.now();
-      var maxDuration = 2000;
-      var maxTime = startTime + maxDuration;
-      var endTime = maxTime;
-      var iterations = 0;
+      const startTime = Date.now();
+      const maxDuration = 2000;
+      const maxTime = startTime + maxDuration;
+      let endTime = maxTime;
+      let iterations = 0;
 
       while (Date.now() < maxTime) {
-        var copy = clone(data);
+        const copy = clone(data);
         iterations++;
         endTime = Date.now();
       }
 
-      var avgTime = Math.round((endTime - startTime) / iterations);
+      const avgTime = Math.round((endTime - startTime) / iterations);
 
       results.push({
         name: name,
@@ -76,22 +79,20 @@ benv.setup(function () {
     console.log('');
 
     // Sort by time desc
-    results.sort(function (a, b) {
-      return b.time - a.time;
-    });
+    results.sort((a, b) => b.time - a.time);
 
     // Change results to array of values and format time
-    results = results.map(function (item) {
+    results = results.map((item) => {
       return [
         item.name,
         numeral(item.time).format('0,0') + ' ms'
       ];
     });
 
-    var columnTitles = ['Library', 'Time']
+    const columnTitles = ['Library', 'Time'];
 
     // Get max column lengths so we can pad them nicely
-    var columnLengths = results.reduce(function (prev, curr) {
+    const columnLengths = results.reduce((prev, curr) => {
       return [
         Math.max(prev[0], curr[0].length),
         Math.max(prev[1], curr[1].length)
@@ -109,8 +110,8 @@ benv.setup(function () {
       '-|-' +
       pad('', columnLengths[1], '-'));
 
-    results.forEach(function (result, index) {
-      var color = index == names.length - 1 ? chalk.green : chalk.reset;
+    results.forEach((result, index) => {
+      const color = index == names.length - 1 ? chalk.green : chalk.reset;
       console.log(
         color(pad(result[0], columnLengths[0])) +
         ' | ' +

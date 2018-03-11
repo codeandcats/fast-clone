@@ -38,4 +38,3 @@ node_modules
 
 # Build output
 index.js
-index.d.ts
