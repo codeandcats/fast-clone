@@ -2,13 +2,13 @@
 	<img src="https://raw.githubusercontent.com/codeandcats/fast-clone/master/logo.png" />
 </center>
 
-The *fastest deep cloning* function on NPM that supports the following types:
+The ***fastest deep cloning*** function on NPM that supports the following types:
 - Objects (POJOs, null, undefined)
 - Arrays
 - Dates
 - Regular Expressions
 - Strings
-- Numbers (NaN, Positive Intinity, Negative Intinity)
+- Numbers (NaN, Positive Infinity, Negative Infinity)
 - Booleans
 
 ## Speed Comparison
@@ -24,16 +24,23 @@ Library            |      3.5 MB |        7 MB |      15 MB |
 ✘ angular.copy     |   514 ms    | 1,895 ms    | 7,308 ms   |
 
 ## Installation
-```
+
+# NPM
+```sh
 npm install fast-clone --save
+```
+
+# Yarn
+```sh
+yarn add fast-clone
 ```
 
 ## Usage
 Can be used in Node.js or you can use in Browser either using Browserfy/Webpack or the global clone function.
-```
-var clone = require('fast-clone');
+```ts
+const clone = require('fast-clone');
 
-var a = {
+const a = {
 	name: 'Natasha Rominov',
 	age: 30,
 	skills: [
@@ -43,7 +50,7 @@ var a = {
 	dateOfBirth: new Date('1986-05-21T00:00:00.000Z')
 };
 
-var b = clone(a);
+const b = clone(a);
 
 b.skills.push('That grabby thing she does with her legs');
 
@@ -52,7 +59,7 @@ console.log(b.skills);
 ```
 
 Output will be:
-```
+```ts
 ['Pistols', 'Espionage']
 ['Pistols', 'Espionage', 'That grabby thing she does with her legs']
 ```
