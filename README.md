@@ -12,16 +12,16 @@ The *fastest deep cloning* function on NPM that supports the following types:
 - Booleans
 
 ## Speed Comparison
-Average runtime of various NPM clone libraries on a **large** complex object loaded from a **1.61 MB** json file.
+Average runtime of various NPM clone libraries on a **large** complex object loaded from json files of varying sizes ranging from 3.5 MB to 15 MB.
 
-Library          | Time
------------------|-----------
-clone            | 1,229 ms
-snapshot         |   213 ms
-deepClone        |   208 ms
-angular.copy     |   195 ms
-lodash.cloneDeep |   187 ms
-**fast-clone**   |  **72 ms**
+Library            |      3.5 MB |        7 MB |      15 MB |
+-------------------|-------------|-------------|------------|
+✔ **fast-clone**   |  **65 ms**  | **135 ms**  | **275 ms** |
+✘ deepClone        |    72 ms    |   162 ms    |   313 ms   |
+✘ lodash.cloneDeep |    96 ms    |   214 ms    |   476 ms   |
+✘ snapshot         |   337 ms    | 1,145 ms    | 3,420 ms   |
+✘ clone            |   504 ms    | 1,843 ms    | 7,221 ms   |
+✘ angular.copy     |   514 ms    | 1,895 ms    | 7,308 ms   |
 
 ## Installation
 ```
@@ -29,7 +29,7 @@ npm install fast-clone --save
 ```
 
 ## Usage
-Can be used in Node.js or you can use in Browser either using Browserfy/Webpack or the global clone function. 
+Can be used in Node.js or you can use in Browser either using Browserfy/Webpack or the global clone function.
 ```
 var clone = require('fast-clone');
 
@@ -60,4 +60,4 @@ Output will be:
 ## Got an Issue or Feature Suggestion?
 Then [create an issue on GitHub](https://github.com/codeandcats/fast-clone/issues) and I'll fix/add it asap. :)
 
-Or fork the repo and shoot me a pull request
+Or fork the [repo](https://github.com/codeandcats/fast-clone) and shoot me a pull request

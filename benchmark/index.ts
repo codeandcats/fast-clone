@@ -30,7 +30,7 @@ benv.setup(function () {
 
   console.log('Generating random json data...');
 
-  const data = getRandomPerson({ depth: 11 });
+  const data = getRandomPerson({ depth: 12 });
 
   console.log('Done.');
   console.log('');
