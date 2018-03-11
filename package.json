@@ -42,6 +42,7 @@
     "mocha": "5.0.4",
     "numeral": "1.5.6",
     "pad": "1.0.3",
-    "snapshot": "0.0.0"
+    "snapshot": "0.0.0",
+    "typescript": "2.7.2"
   }
 }
