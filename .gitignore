@@ -34,3 +34,7 @@ node_modules
 
 # Visual Studio Code
 .vscode
+
+# Build output
+index.js
+index.d.ts
