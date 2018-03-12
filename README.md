@@ -25,12 +25,12 @@ Library            |      3.5 MB |        7 MB |      15 MB |
 
 ## Installation
 
-# NPM
+### NPM
 ```sh
 npm install fast-clone --save
 ```
 
-# Yarn
+### Yarn
 ```sh
 yarn add fast-clone
 ```
@@ -38,12 +38,12 @@ yarn add fast-clone
 ## Usage
 Fast-clone is a UMD module so you can use it in Node.js, or in Browser either using Browserfy/Webpack, or by using the global clone function if not using a module loader.
 
-TypeScript
+### TypeScript
 ```ts
 import clone = require('fast-clone');
 ```
 
-JavaScript
+### JavaScript
 ```js
 const clone = require('fast-clone');
 ```
