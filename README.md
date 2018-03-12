@@ -36,10 +36,19 @@ yarn add fast-clone
 ```
 
 ## Usage
-Can be used in Node.js or you can use in Browser either using Browserfy/Webpack or the global clone function.
-```ts
-const clone = require('fast-clone');
+Fast-clone is a UMD module so you can use it in Node.js, or in Browser either using Browserfy/Webpack, or by using the global clone function if not using a module loader.
 
+TypeScript
+```ts
+import clone = require('fast-clone');
+```
+
+JavaScript
+```js
+const clone = require('fast-clone');
+```
+
+```ts
 const a = {
 	name: 'Natasha Rominov',
 	age: 30,
