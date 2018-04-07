@@ -31,7 +31,7 @@
     "url": "https://github.com/codeandcats/fast-clone/issues"
   },
   "homepage": "https://github.com/codeandcats/fast-clone#readme",
-  "typings": "index.d.ts",
+  "types": "index.d.ts",
   "devDependencies": {
     "@types/chai": "4.1.2",
     "@types/mocha": "2.2.48",
