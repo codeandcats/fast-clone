@@ -73,7 +73,7 @@ Output will be:
 ['Pistols', 'Espionage', 'That grabby thing she does with her legs']
 ```
 
-## Got an Issue or Feature Suggestion?
-Then [create an issue on GitHub](https://github.com/codeandcats/fast-clone/issues) and I'll fix/add it asap. :)
+## Contributing
+Got an issue or a feature request? [Log it](https://github.com/codeandcats/fast-clone/issues).
 
-Or fork the [repo](https://github.com/codeandcats/fast-clone) and shoot me a pull request
+[Pull-requests](https://github.com/codeandcats/fast-clone/pulls) are also welcome. 😸
