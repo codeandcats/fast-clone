@@ -5,3 +5,6 @@ benchmark.jpg
 
 # TypeScript Source
 index.ts
+
+# Config files
+commitlint.config.js
