@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.13"></a>
+## [1.5.13](https://github.com/codeandcats/fast-clone/compare/v1.5.12...v1.5.13) (2019-03-09)
+
+
+### Bug Fixes
+
+* **package:** update dependencies to address vulnerabilities ([766fc2a](https://github.com/codeandcats/fast-clone/commit/766fc2a))
+
+
+
 <a name="1.5.12"></a>
 ## [1.5.12](https://github.com/codeandcats/fast-clone/compare/v1.5.11...v1.5.12) (2019-03-09)
 
