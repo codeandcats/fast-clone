@@ -1,6 +1,6 @@
 {
   "name": "fast-clone",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "Extremely fast deep cloning function",
   "main": "./index.js",
   "private": true,
@@ -14,7 +14,7 @@
     "prepackage": "npm run build",
     "package": "ts-node --project ./tsconfig.package.json ./support/package.ts",
     "prerelease": "npm run package",
-    "release": "git checkout master && git pull origin master && standard-version",
+    "release": "git checkout master && git pull origin master && standard-version && ts-node ./support/updatePackageVersion.ts",
     "ship-it": "git push --follow-tags origin master && cd ./dist && npm publish",
     "pretest": "npm run build && cp ./src/index.d.ts ./dist/index.d.ts",
     "test": "jest"
@@ -43,7 +43,7 @@
   "types": "index.d.ts",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run check",
+      "pre-commit": "npm run package",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
