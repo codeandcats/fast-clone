@@ -7,13 +7,11 @@
   "scripts": {
     "benchmark": "ts-node ./support/benchmark",
     "prebuild": "npm run clean",
-    "build": "tsc -p ./tsconfig.main.json",
+    "build": "tsc -p ./tsconfig.main.json && ts-node --project ./tsconfig.package.json ./support/package.ts",
     "check": "npm run build && npm test",
     "clean": "rimraf ./dist",
     "commit": "commit",
-    "prepackage": "npm run build",
-    "package": "ts-node --project ./tsconfig.package.json ./support/package.ts",
-    "prerelease": "npm run package",
+    "prerelease": "npm run build",
     "release": "git checkout master && git pull origin master && standard-version && ts-node ./support/updatePackageVersion.ts",
     "ship-it": "git push --follow-tags origin master && cd ./dist && npm publish",
     "pretest": "npm run build && cp ./src/index.d.ts ./dist/index.d.ts",
@@ -43,7 +41,7 @@
   "types": "index.d.ts",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run package",
+      "pre-commit": "npm run build",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
