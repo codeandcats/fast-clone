@@ -2,13 +2,15 @@ const windowOrGlobal = Function('return this')();
 
 (function (root) {
 
+  /* istanbul ignore next */
   if (typeof exports !== 'undefined') {
+    /* istanbul ignore next */
     if (typeof module !== 'undefined' && module && module.exports) {
       exports = module.exports = clone;
     }
     exports.clone = clone;
-  }
-  else {
+  } else {
+    /* istanbul ignore next */
     root.clone = clone;
   }
 

@@ -2,6 +2,12 @@
 	<img src="https://raw.githubusercontent.com/codeandcats/fast-clone/master/logo.png" />
 </center>
 
+[![npm version](https://badge.fury.io/js/fast-clone.svg)](https://badge.fury.io/js/fast-clone)
+[![Build Status](https://travis-ci.org/codeandcats/fast-clone.svg?branch=master)](https://travis-ci.org/codeandcats/fast-clone)
+[![Coverage Status](https://coveralls.io/repos/github/codeandcats/fast-clone/badge.svg?branch=master)](https://coveralls.io/github/codeandcats/fast-clone?branch=master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/codeandcats/fast-clone.svg)](https://greenkeeper.io/)
+
+
 The ***fastest deep cloning*** function on NPM that supports the following types:
 - Objects (POJOs, null, undefined)
 - Arrays
@@ -14,14 +20,14 @@ The ***fastest deep cloning*** function on NPM that supports the following types
 ## Speed Comparison
 Average runtime of various NPM clone libraries on a **large** complex object loaded from json files of varying sizes ranging from 3.5 MB to 15 MB.
 
-Library            |      3.5 MB |        7 MB |      15 MB |
--------------------|-------------|-------------|------------|
-✔ **fast-clone**   |  **65 ms**  | **135 ms**  | **275 ms** |
-✘ deepClone        |    72 ms    |   162 ms    |   313 ms   |
-✘ lodash.cloneDeep |    96 ms    |   214 ms    |   476 ms   |
-✘ snapshot         |   337 ms    | 1,145 ms    | 3,420 ms   |
-✘ clone            |   504 ms    | 1,843 ms    | 7,221 ms   |
-✘ angular.copy     |   514 ms    | 1,895 ms    | 7,308 ms   |
+Library            |    7.15 MB |
+-------------------|------------|
+✔ **fast-clone**   | **120 ms** |
+✘ deepClone        |   138 ms   |
+✘ lodash.cloneDeep |   155 ms   |
+✘ snapshot         | 1,127 ms   |
+✘ angular.copy     | 1,942 ms   |
+✘ clone            | 2,085 ms   |
 
 ## Installation
 

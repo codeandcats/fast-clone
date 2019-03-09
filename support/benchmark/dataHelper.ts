@@ -3,10 +3,6 @@ import * as path from 'path';
 import * as os from 'os';
 import * as fs from 'fs';
 
-function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 const MS_IN_YEAR = 1000 * 60 * 60 * 24 * 365;
 
 interface Employment {
@@ -64,7 +60,7 @@ function getTempFileName() {
   return path.join(os.tmpdir(), Math.floor((Math.random() * 10000000)).toString() + '.yo.tmp');
 }
 
-export function getJsonSize(obj, callback) {
+export function getJsonSize(obj: any, callback: (size: number) => void) {
   var tempFileName = getTempFileName();
   var text = JSON.stringify(obj, null, '\t');
 

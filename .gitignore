@@ -37,4 +37,4 @@ node_modules
 !.vscode/settings.json
 
 # Build output
-index.js
+dist
