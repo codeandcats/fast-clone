@@ -14,7 +14,7 @@
     "prerelease": "npm run build",
     "release": "git checkout master && git pull origin master && standard-version && ts-node ./support/updatePackageVersion.ts",
     "ship-it": "git push --follow-tags origin master && cd ./dist && npm publish",
-    "pretest": "npm run build && cp ./src/index.d.ts ./dist/index.d.ts",
+    "pretest": "npm run build",
     "test": "jest"
   },
   "keywords": [
