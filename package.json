@@ -1,6 +1,6 @@
 {
   "name": "fast-clone",
-  "version": "1.5.10",
+  "version": "1.5.11",
   "description": "Extremely fast deep cloning function",
   "main": "./index.js",
   "private": true,
