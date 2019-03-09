@@ -4,9 +4,6 @@
   },
   "extends": "./tsconfig.json",
   "include": [
-    "src/**/*.test.ts"
-  ],
-  "include": [
-    "typings/benv.d.ts"
+    "./src/**/*.test.ts"
   ]
 }

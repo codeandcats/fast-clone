@@ -5,6 +5,6 @@
     "./support/package.ts"
   ],
   "include": [
-    "typings/resolve-app-path.d.ts"
+    "./typings/resolve-app-path.d.ts"
   ]
 }

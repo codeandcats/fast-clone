@@ -4,9 +4,9 @@
   },
   "extends": "./tsconfig.json",
   "files": [
-    "src/index.ts"
+    "./src/index.ts"
   ],
   "include": [
-    "typings/resolve-app-path.d.ts"
+    "./typings/resolve-app-path.d.ts"
   ]
 }

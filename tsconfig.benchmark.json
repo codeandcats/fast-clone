@@ -3,5 +3,8 @@
   "compilerOptions": {
     "module": "commonjs"
   },
-  "include": "support/benchmark/*.ts"
+  "include": [
+    "./typings/benv.d.ts",
+    "./support/benchmark/*.ts"
+  ]
 }
