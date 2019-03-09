@@ -1,11 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import resolveAppPath = require('resolve-app-path');
+import { rootPath } from 'get-root-path';
 
-const appPath = resolveAppPath();
-
-const sourcePackageFileName = path.join(appPath, './package.json');
-const destinationPackageFileName = path.join(appPath, './dist/package.json');
+const sourcePackageFileName = path.join(rootPath, './package.json');
+const destinationPackageFileName = path.join(rootPath, './dist/package.json');
 
 const sourcePackage = JSON.parse(fs.readFileSync(sourcePackageFileName, 'utf-8'));
 const destinationPackage = JSON.parse(fs.readFileSync(destinationPackageFileName, 'utf-8'));

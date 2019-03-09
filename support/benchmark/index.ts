@@ -3,17 +3,15 @@ import chalk from 'chalk';
 import pad = require('pad');
 import * as numeral from 'numeral';
 import * as benv from 'benv';
-import resolveAppPath = require('resolve-app-path');
+import { rootPath } from 'get-root-path';
 import { getJsonSize, getRandomPerson } from './dataHelper';
 import * as path from 'path';
-
-const appPath = resolveAppPath();
 
 declare const angular: { copy: <T>(value: T) => T };
 
 benv.setup(function () {
   benv.expose({
-    angular: benv.require(path.join(appPath, './node_modules/angular/angular.js'), 'angular')
+    angular: benv.require(path.join(rootPath, './node_modules/angular/angular.js'), 'angular')
   });
 
   // Various cloning libraries
@@ -27,7 +25,7 @@ benv.setup(function () {
         return eval(expr);
       };
     })(require('snapshot')),
-    'fast-clone': require(path.join(appPath, './dist/index.js')),
+    'fast-clone': require(path.join(rootPath, './dist/index.js')),
     'angular.copy': angular.copy
   };
 
