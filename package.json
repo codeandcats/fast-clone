@@ -73,7 +73,7 @@
     "rimraf": "2.6.3",
     "snapshot": "0.0.0",
     "standard-version": "^5.0.0",
-    "ts-jest": "24.0.0",
+    "ts-jest": "24.0.2",
     "ts-node": "8.0.3",
     "typescript": "3.3.3333"
   }
