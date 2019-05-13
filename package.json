@@ -69,7 +69,7 @@
     "jest": "24.3.1",
     "lodash": "4.17.11",
     "numeral": "2.0.6",
-    "pad": "2.2.2",
+    "pad": "3.1.0",
     "rimraf": "2.6.3",
     "snapshot": "0.0.0",
     "standard-version": "^5.0.0",
