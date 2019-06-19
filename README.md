@@ -7,6 +7,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/codeandcats/fast-clone/badge.svg?branch=master)](https://coveralls.io/github/codeandcats/fast-clone?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/codeandcats/fast-clone.svg)](https://greenkeeper.io/)
 
+# DEPRECATION NOTICE
+After a few years since it's creation, fast-clone is no longer the fastest cloning library on npm. Alternative packages have caught up and overtaken it. I had a last stab at optimising it while adding new features but alas optimising for performance further meant sacrificing features (and vice-versa). So I've decided to hand over the [`fast-clone` npm namespace](https://www.npmjs.com/package/fast-clone) to a [more worthy contender](https://github.com/davidmarkclements/rfdc). rfdc (really fast deep clone) is exactly what it's initialism means: really fast.
 
 The ***fastest deep cloning*** function on NPM that supports the following types:
 - Objects (POJOs, null, undefined)
