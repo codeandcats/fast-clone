@@ -55,7 +55,7 @@
     "@types/node": "11.11.0",
     "@types/numeral": "0.0.25",
     "@types/pad": "1.0.2",
-    "angular": "1.7.7",
+    "angular": "1.7.8",
     "benv": "3.3.0",
     "chalk": "2.4.2",
     "clone": "2.1.2",
